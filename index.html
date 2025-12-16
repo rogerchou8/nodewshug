@@ -3,720 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Save the Red Panda | Conservation & Awareness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        /* CSS STYLES START HERE */
 
+        /* General Variables and Styles */
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
+            --primary-color: #D9534F; /* Red Panda red */
+            --secondary-color: #5C2D2A; /* Darker red/brown */
+            --accent-color: #F0AD4E; /* Orange/gold for highlights */
+            --text-color: #333;
+            --light-bg: #f8f8f8;
+            --dark-bg: #2c3e50; /* Dark blue-grey for footer */
             --white: #ffffff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--text);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: var(--text-color);
             line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
         }
 
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .nav-container {
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--secondary-color);
+            margin-bottom: 0.8em;
+        }
+
+        h1 { font-size: 2.8em; color: var(--primary-color); }
+        h2 { font-size: 2.2em; text-align: center; margin-bottom: 1.5em; }
+        h3 { font-size: 1.5em; }
+
+        p { margin-bottom: 1em; }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+            padding: 60px 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 2rem;
+        .logo a {
+            font-family: var(--font-heading);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--white);
         }
 
         nav ul {
-            display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
 
         nav ul li {
-            margin-left: 2rem;
+            margin-left: 30px;
         }
 
         nav ul li a {
             color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
+            font-weight: 600;
+            padding: 5px 0;
             position: relative;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent);
         }
 
         nav ul li a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+            background: var(--accent-color);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
         }
 
         nav ul li a:hover::after {
             width: 100%;
         }
 
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
+            background: url('https://via.placeholder.com/1500x600?text=Majestic+Red+Panda+Habitat') no-repeat center center/cover;
+            height: 60vh;
             display: flex;
+            justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--white);
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .hero-content {
+            position: relative;
+            z-index: 1;
             max-width: 800px;
-            margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 0.3em;
             color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
         }
 
-        .btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        .hero-content p {
+            font-size: 1.4em;
+            margin-bottom: 1.5em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        /* Content Sections (About, Facts) */
+        .content-wrapper {
+            display: flex;
             align-items: center;
+            gap: 40px;
+            padding: 60px 0;
         }
 
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .content-wrapper .text-content {
+            flex: 1;
         }
 
-        .about-img img {
-            width: 100%;
+        .content-wrapper .image-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .content-wrapper .image-content img {
+            max-width: 100%;
             height: auto;
-            display: block;
-            transition: transform 0.5s ease;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .about-img:hover img {
-            transform: scale(1.05);
+        .content-wrapper .image-content figcaption {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
         }
 
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
+        .reverse-layout {
+            flex-direction: row-reverse;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
+        /* Threats Section */
+        .threats-section {
+            padding: 80px 0;
         }
 
-        .stats {
+        .threats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .stat-item {
+        .threat-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 25px;
             text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .stat-item:hover {
-            transform: translateY(-10px);
+        .threat-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .stat-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: var(--text);
-        }
-
-        .initiatives {
-            background-color: var(--white);
-        }
-
-        .initiatives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .initiative-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .initiative-img img {
-            width: 100%;
-            height: 100%;
+        .threat-item img {
+            max-width: 100%;
+            height: 180px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
+        .threat-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
         }
 
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .initiative-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
+        /* Fun Facts Section */
+        .facts-section ul {
             list-style: none;
+            padding: 0;
+            margin-top: 20px;
         }
 
-        .footer-links li {
-            margin-bottom: 0.8rem;
+        .facts-section ul li {
+            background: #fffafa;
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .footer-links li a {
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .facts-section ul li strong {
+            color: var(--secondary-color);
         }
 
-        .footer-links li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
+        /* Action Section */
+        .action-section {
+            padding: 80px 0;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .action-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .action-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .action-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .action-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .social-links {
-            display: flex;
-            gap: 1rem;
+            margin-top: 15px;
         }
 
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+        .social-icon {
+            display: inline-block;
             color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
+            background-color: var(--secondary-color);
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            margin: 0 8px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.8em; }
+            .hero-content p { font-size: 1.2em; }
+
             nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
                 flex-direction: column;
-                padding: 1rem 0;
                 text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                margin-top: 10px;
             }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
             nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
+                margin: 10px 0;
             }
-            
-            .mobile-menu {
-                display: block;
+
+            .container {
+                padding: 0 15px;
             }
-            
-            .initiatives-grid {
+
+            .content-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                padding: 40px 0;
+            }
+
+            .content-wrapper .image-content {
+                order: -1;
+            }
+
+            .reverse-layout .image-content {
+                order: -1;
+            }
+
+            .threats-grid, .action-grid, .image-gallery {
                 grid-template-columns: 1fr;
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
+
+            .threat-item img, .action-item img {
+                height: auto;
             }
-            
-            .stats {
-                grid-template-columns: 1fr;
+
+            footer .container {
+                flex-direction: column;
             }
         }
 
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+        @media (max-width: 480px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .hero { height: 50vh; }
+            .hero-content p { font-size: 1em; }
+            .btn { padding: 10px 20px; }
         }
+        /* CSS STYLES END HERE */
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
-            </div>
+        <div class="container">
             <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
+                <div class="logo">
+                    <a href="#home">Red Panda Watch</a>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#threats">Threats</a></li>
+                    <li><a href="#facts">Fun Facts</a></li>
+                    <li><a href="#action">Take Action</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Protect the Red Panda: Guardians of the Himalayas</h1>
+                <p>Join us in safeguarding these unique and adorable creatures. Every action counts.</p>
+                <a href="#action" class="btn">Learn How You Can Help</a>
+            </div>
+            
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+        <section id="about" class="about-section">
+            <div class="container content-wrapper">
+                <div class="text-content">
+                    <h2>Meet the Red Panda</h2>
+                    <p>The Red Panda ($Ailurus\; fulgens$), sometimes called the 'lesser panda,' is an arboreal mammal native to the eastern Himalayas and southwestern China. With their striking reddish-brown fur, long bushy tails, and white facial markings, they are truly one of nature's most enchanting creatures.</p>
+                    <p>Primarily solitary and nocturnal, Red Pandas spend most of their lives in trees, foraging for bamboo shoots and leaves, fruits, acorns, and occasionally insects or bird eggs. They use their long tails for balance and camouflage among the mossy branches of their forest homes. Though they share a name with the Giant Panda, they belong to their own unique family, $Ailuridae$, a testament to their distinct evolutionary path.</p>
+                    <p>Sadly, these beautiful animals are classified as <strong>Endangered</strong> by the IUCN, with their wild population rapidly declining. Understanding their biology and habitat is the first step towards their protection.</p>
                 </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                <div class="image-content">
+                    <img src="https://via.placeholder.com/400x300?text=Red+Panda+in+Tree" alt="Red Panda resting on a tree branch">
+                    <figcaption>A Red Panda gracefully navigating its forest habitat.</figcaption>
                 </div>
             </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
-            </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+        <section id="threats" class="threats-section bg-light">
+            <div class="container">
+                <h2>Why Are They Disappearing?</h2>
+                <div class="threats-grid">
+                    <div class="threat-item">
+                        <img src="https://via.placeholder.com/250x180?text=Habitat+Loss" alt="Forest being cut down">
+                        <h3>Habitat Loss & Fragmentation</h3>
+                        <p>Deforestation for agriculture, human settlements, and logging is destroying their unique temperate forest habitat, making it harder for them to find food and mates.</p>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="threat-item">
+                        <img src="https://via.placeholder.com/250x180?text=Poaching" alt="Animal snare trap">
+                        <h3>Poaching & Illegal Trade</h3>
+                        <p>Red Pandas are illegally hunted for their fur, especially for "lucky charm" hats, and are sometimes captured for the illicit pet trade, significantly impacting their numbers.</p>
                     </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+                    <div class="threat-item">
+                        <img src="https://via.placeholder.com/250x180?text=Climate+Change" alt="Deforested area with drought">
+                        <h3>Climate Change Impacts</h3>
+                        <p>Shifting weather patterns disrupt the growth of their primary food source, bamboo, and increase the frequency of extreme weather events in their fragile ecosystem.</p>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="threat-item">
+                        <img src="https://via.placeholder.com/250x180?text=Human+Interference" alt="Human footprint in forest">
+                        <h3>Human Interference</h3>
+                        <p>Increased human activity leads to infrastructure development, livestock grazing, and potential disease transmission from domestic animals, all posing threats to wild populations.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
-        <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+        <section id="facts" class="facts-section">
+            <div class="container content-wrapper reverse-layout">
+                <div class="text-content">
+                    <h2>Fun Facts About Red Pandas</h2>
+                    <ul>
+                        <li><strong>"The Original Panda":</strong> Red Pandas were scientifically described 48 years before the Giant Panda!</li>
+                        <li><strong>Bamboo Eaters:</strong> Like Giant Pandas, bamboo makes up a significant portion of their diet, but they also eat fruits, roots, and eggs.</li>
+                        <li><strong>False Thumb:</strong> They have an extended wrist bone, a 'false thumb,' which helps them grip bamboo stalks.</li>
+                        <li><strong>Tree Dwellers:</strong> Red Pandas are primarily arboreal, spending most of their time in trees, even sleeping aloft.</li>
+                        <li><strong>Shy & Solitary:</strong> They are generally shy and solitary animals, coming together only to mate.</li>
+                        <li><strong>Temperature Control:</strong> They have thick fur, including on their soles, which helps protect them from the cold and keeps them warm in their mountain habitats.</li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                <div class="image-content">
+                    <img src="https://via.placeholder.com/400x300?text=Curious+Red+Panda" alt="Curious Red Panda looking at the camera">
+                    <figcaption>Intriguing facts about these captivating creatures.</figcaption>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+        </section>
+
+        <section id="action" class="action-section bg-light">
+            <div class="container">
+                <h2>Be a Red Panda Protector!</h2>
+                <div class="action-grid">
+                    <div class="action-item">
+                        <img src="https://via.placeholder.com/150x150?text=Donate" alt="Donation box icon">
+                        <h3>Support Organizations</h3>
+                        <p>Donate to or volunteer with reputable conservation groups like the Red Panda Network. Your contribution directly funds anti-poaching efforts and habitat restoration.</p>
+                        <a href="#" class="btn btn-small">Find Organizations</a>
+                    </div>
+                    <div class="action-item">
+                        <img src="https://via.placeholder.com/150x150?text=Educate" alt="People discussing icon">
+                        <h3>Spread Awareness</h3>
+                        <p>Share their story! Educate your friends, family, and community about the threats Red Pandas face and why their survival is crucial.</p>
+                        <a href="#" class="btn btn-small">Share on Social</a>
+                    </div>
+                    <div class="action-item">
+                        <img src="https://via.placeholder.com/150x150?text=Sustainable" alt="Leaf icon">
+                        <h3>Live Sustainably</h3>
+                        <p>Make eco-conscious choices. Support sustainable products, reduce your carbon footprint, and choose goods that don't contribute to deforestation.</p>
+                        <a href="#" class="btn btn-small">Eco-Friendly Tips</a>
+                    </div>
+                    <div class="action-item">
+                        <img src="https://via.placeholder.com/150x150?text=Report" alt="Magnifying glass icon">
+                        <h3>Report Illegal Trade</h3>
+                        <p>Be vigilant. If you encounter or suspect illegal wildlife trade activities, report them to local authorities or international wildlife protection agencies.</p>
+                        <a href="#" class="btn btn-small">How to Report</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>A Glimpse into Their World</h2>
+                <div class="image-gallery">
+                    <img src="https://via.placeholder.com/300x200?text=Red+Panda+1" alt="Red Panda climbing a tree">
+                    <img src="https://via.placeholder.com/300x200?text=Red+Panda+2" alt="Red Panda eating bamboo">
+                    <img src="https://via.placeholder.com/300x200?text=Red+Panda+3" alt="Close-up of Red Panda face">
+                    <img src="https://via.placeholder.com/300x200?text=Red+Panda+4" alt="Red Panda sleeping on branch">
+                    <img src="https://via.placeholder.com/300x200?text=Red+Panda+5" alt="Red Panda cub">
+                    <img src="https://via.placeholder.com/300x200?text=Red+Panda+6" alt="Red Panda in snow">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Red Panda Watch. All rights reserved. | Contact Us</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">F</a>
+                <a href="#" class="social-icon">T</a>
+                <a href="#" class="social-icon">I</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelector('nav ul').classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
-
 </html>
